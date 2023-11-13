@@ -5,10 +5,10 @@ public class Main {
         System.out.printf("%s\n", "Hello World");
         System.out.printf("%d %f %f", 123, 1.2, 1.4);
         System.out.printf("%s ", "123");
-
         System.out.println();
-
         System.out.printf("%03d\n", 1);
+
+        System.out.println("Hello World");
 
         System.out.printf("%2.3S", "freitag");
     }
