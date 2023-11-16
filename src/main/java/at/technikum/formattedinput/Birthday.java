@@ -1,6 +1,5 @@
 package at.technikum.formattedinput;
 
-import javax.sound.midi.Soundbank;
 import java.util.Scanner;
 
 public class Birthday {
