@@ -1,6 +1,5 @@
 package at.technikum.arrays;
 
-import javax.security.sasl.SaslClient;
 import java.util.Scanner;
 
 public class GradeAverage {
@@ -33,19 +32,42 @@ public class GradeAverage {
 
         for (int i = 0; i < grades.length; i++) {
             System.out.printf("%d Grade: ", i + 1);
-            grades[i] = input.nextInt();
+
+            int grade = input.nextInt();
+            if (-1 == grade) {
+                // current average
+                /*
+                if (0 != i) {
+                    System.out.printf(
+                            "Current Average: %s\n",
+                            average(grades, i)
+                    );
+                }
+                */
+                System.out.printf(
+                        "Current Average: %s\n",
+                        0 != i ? average(grades, i) : 0
+                );
+
+
+                //i = i - 1;
+                i--;
+                continue;
+            }
+
+            grades[i] = grade;
         }
 
-        System.out.printf("Average: %s\n", average(grades));
+        System.out.printf("Average: %s\n", average(grades, grades.length));
     }
 
-    private static double average(int[] grades) {
+    private static double average(int[] grades, int amount) {
         double sum = 0.0;
-        for (int i = 0; i < grades.length; i++) {
+        for (int i = 0; i < amount; i++) {
             sum = sum + grades[i];
             // sum += grades[i]
         }
-        double average = sum / grades.length;
+        double average = sum / amount;
 
         return average;
 
