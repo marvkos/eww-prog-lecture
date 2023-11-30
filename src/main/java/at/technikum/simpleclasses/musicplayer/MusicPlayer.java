@@ -21,7 +21,10 @@ public class MusicPlayer {
                 "Pop",
                 400
         );
-        Playlist p1 = new Playlist(5);
+        Playlist p1 = new Playlist(
+                "Party Mix",
+                5
+        );
         p1.addSong(track1);
         p1.addSong(track2);
         p1.addSong(track3);

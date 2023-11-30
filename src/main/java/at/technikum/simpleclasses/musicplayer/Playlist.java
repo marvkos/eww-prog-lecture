@@ -6,7 +6,7 @@ public class Playlist {
 
     private Song[] songs;
 
-    public Playlist(int maxSong) {
+    public Playlist(String title, int maxSong) {
         // TODO
     }
 
