@@ -1,0 +1,16 @@
+@startuml
+
+class Song {
+    - title: String
+    - artist: String
+    - genre: String
+    - length: int
+}
+
+class Playlist {
+    - title: String
+}
+
+Playlist --> Song: - songs
+
+@enduml

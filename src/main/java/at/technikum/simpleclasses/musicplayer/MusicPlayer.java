@@ -30,7 +30,7 @@ public class MusicPlayer {
         p1.addSong(track3);
 
         System.out.printf(
-                "Total Runtime in Seconds: %s",
+                "Total Runtime in Seconds: %d",
                 p1.getTotalRuntime()
         );
     }

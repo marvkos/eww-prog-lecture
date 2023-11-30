@@ -4,6 +4,7 @@ public class Song {
 
     private String title;
 
+    // TODO: private Artist artist;
     private String artist;
 
     private String genre;
