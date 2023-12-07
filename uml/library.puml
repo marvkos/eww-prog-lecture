@@ -1,0 +1,50 @@
+@startuml
+
+
+class Library {
+    - name: String
+    - books: Book[]
+
+    + rent(item, member): bool
+    + returnItem(item)
+}
+
+abstract class Item {
+    - id: String
+    - rentedBy: Member
+}
+
+abstract class Book {
+    - title: String
+    - isbn: String
+    - author: Author
+}
+
+class PaperBook {
+    - pages: int
+}
+
+class AudioBook {
+    - length: int
+}
+
+class Movie {
+    - title: String
+}
+
+
+Book --|> Item
+AudioBook --|> Book
+PaperBook --|> Book
+Movie --|> Item
+
+class Author {
+    - name: String
+}
+
+class Member {
+    - number: int
+    - name: String
+}
+
+@enduml
