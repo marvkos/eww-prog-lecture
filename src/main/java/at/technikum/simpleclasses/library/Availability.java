@@ -1,6 +1,6 @@
 package at.technikum.simpleclasses.library;
 
-public enum Availabilty {
+public enum Availability {
     FREE,
     RENTED
 }

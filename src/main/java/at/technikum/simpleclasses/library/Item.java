@@ -10,16 +10,16 @@ public abstract class Item {
         this.id = id;
     }
 
-    public Availabilty getAvailability() {
+    public Availability getAvailability() {
         if (null == rentedBy) {
-            return Availabilty.FREE;
+            return Availability.FREE;
         }
 
-        return Availabilty.RENTED;
+        return Availability.RENTED;
     }
 
     public boolean isAvailable() {
-        if (getAvailability() == Availabilty.FREE) {
+        if (getAvailability() == Availability.FREE) {
             return true;
         } else {
             return false;
