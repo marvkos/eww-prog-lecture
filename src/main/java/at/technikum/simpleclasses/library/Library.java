@@ -14,18 +14,18 @@ public class Library {
         this.itemCount = 0;
     }
 
-    public boolean rent(Item item, Member member) {
-        if (!item.isAvailable()) {
+    public boolean rent(Rentable rentable, Member member) {
+        if (!rentable.isAvailable()) {
             return false;
         }
 
-        item.setRentedBy(member);
+        rentable.rent(member);
 
         return true;
     }
 
     public boolean rent(String id, Member member) {
-        Item item = findItem(id);
+        Rentable item = findRentable(id);
 
         if (null == item) {
             return false;
@@ -43,12 +43,15 @@ public class Library {
         itemCount++;
     }
 
-    public Item findItem(String id) {
+    public Rentable findRentable(String id) {
         for (int i = 0; i < itemCount; i++) {
             Item item = items[i];
 
-            if (item.getId().equals(id)) {
-                return item;
+            if (
+                    item.getId().equals(id)
+                    && item instanceof Rentable
+            ) {
+                return (Rentable) item;
             }
         }
 

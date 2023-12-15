@@ -25,6 +25,8 @@ public class AudioBook extends Item {
         this.length = length;
     }
 
+
+
     public String getIsbn() {
         return isbn;
     }
@@ -55,5 +57,10 @@ public class AudioBook extends Item {
 
     public void setLength(int length) {
         this.length = length;
+    }
+
+    @Override
+    public String getObjectName() {
+        return null;
     }
 }

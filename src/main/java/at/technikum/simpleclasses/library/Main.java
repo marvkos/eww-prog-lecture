@@ -28,12 +28,12 @@ public class Main {
         library.addItem(animalFarm);
         library.addItem(missionImpossible);
 
-        Item item1 = library.findItem("B-2");
+        Rentable item1 = library.findRentable("B-2");
 
         Member marvin = new Member(1, "Marvin");
         System.out.println(library.rent(item1, marvin)); // true
         System.out.println(library.rent(item1, marvin)); // false
-        library.returnItem(item1);
+        //library.returnItem(item1);
         System.out.println(library.rent(item1, marvin)); // true
 
 

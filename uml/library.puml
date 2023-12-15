@@ -10,8 +10,8 @@ class Library {
 }
 
 abstract class Item {
-    - id: String
-    - rentedBy: Member
+    # id: String
+    # rentedBy: Member
 }
 
 abstract class Book {

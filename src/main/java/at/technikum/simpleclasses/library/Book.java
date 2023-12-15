@@ -1,6 +1,6 @@
 package at.technikum.simpleclasses.library;
 
-public class Book extends Item {
+public class Book extends Item implements Rentable {
 
     private String isbn;
 
@@ -24,6 +24,10 @@ public class Book extends Item {
         this.pages = pages;
     }
 
+    @Override
+    public String getObjectName() {
+        return "Book " + title + " " + author;
+    }
 
     public String getIsbn() {
         return isbn;
@@ -55,5 +59,22 @@ public class Book extends Item {
 
     public void setPages(int pages) {
         this.pages = pages;
+    }
+
+    @Override
+    public boolean rent(Member member) {
+        setRentedBy(member);
+
+        return true;
+    }
+
+    @Override
+    public void returnItem() {
+        setRentedBy(null);
+    }
+
+    @Override
+    public boolean isAvailable() {
+        return getAvailability() == Availability.FREE;
     }
 }

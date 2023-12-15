@@ -1,0 +1,13 @@
+@startuml
+
+class LinkedList {
+    - startNode: Node
+}
+
+class Node {
+    - value: int
+}
+
+Node ..> Node: - nextNod
+
+@enduml

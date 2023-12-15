@@ -2,9 +2,10 @@ package at.technikum.simpleclasses.library;
 
 public abstract class Item {
 
-    private String id;
+    protected String id;
+    // public, private, protected
 
-    private Member rentedBy;
+    protected Member rentedBy;
 
     public Item(String id) {
         this.id = id;
@@ -18,15 +19,7 @@ public abstract class Item {
         return Availability.RENTED;
     }
 
-    public boolean isAvailable() {
-        if (getAvailability() == Availability.FREE) {
-            return true;
-        } else {
-            return false;
-        }
-
-        // return getAvailabilty() == Availabilty.FREE;
-    }
+    public abstract String getObjectName();
 
 
     public String getId() {
@@ -43,5 +36,10 @@ public abstract class Item {
 
     public void setRentedBy(Member rentedBy) {
         this.rentedBy = rentedBy;
+    }
+
+    @Override
+    public String toString() {
+        return "Id:" + this.id;
     }
 }

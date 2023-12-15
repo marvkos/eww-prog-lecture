@@ -11,6 +11,11 @@ public class Movie extends Item {
         this.title = title;
     }
 
+    @Override
+    public String getObjectName() {
+        return "Rating of the movie: " + rating;
+    }
+
     public String getTitle() {
         return title;
     }
