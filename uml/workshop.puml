@@ -1,0 +1,61 @@
+@startuml
+
+class Workshop {
+    + addWorker(worker)
+    + printReport()
+}
+
+abstract class Worker {
+    - name: String
+    + Worker(name)
+    + {abstract} getHourlyRate(): int
+}
+
+class SeniorWorker {
+    + SeniorWorker(name)
+    + getHourlyRate(): int
+}
+
+class JuniorWorker {
+    + JuniorWorker(name)
+    + getHourlyRate(): int
+}
+
+interface Job {
+    + {abstract} getMinNumberOfWorkers(): int
+    + {abstract} getBasePrice(): int
+    + {abstract} getHours(): int
+}
+
+class CarInspection {
+    + CarInspection(car)
+    + getMinNumberOfWorkers(): int
+    + getBasePrice(): int
+    + getHours(): int
+
+}
+
+abstract class Car {
+    # year: int
+    + Car(year)
+}
+
+class Audi {
+    + Audi(year)
+}
+
+SeniorWorker --|> Worker
+
+JuniorWorker --|> Worker
+
+Workshop --> Worker: - workers: Worker[]
+
+Workshop --> Job: - job: Job
+
+CarInspection --|> Job
+
+Audi --|> Car
+
+CarInspection --> Car: - car: Car
+
+@enduml

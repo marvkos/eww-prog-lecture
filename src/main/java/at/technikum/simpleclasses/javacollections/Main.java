@@ -8,6 +8,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        /*
         List<String> names = new LinkedList<>();
 
         names.add("Bob");
@@ -25,5 +26,27 @@ public class Main {
         LinkedList<Integer> integerLinkedList = new LinkedList<>();
 
         integerList = null;
+        */
+
+        Object test = 5;
+
+        System.out.println(test.getClass());
+
+        List<String> strings = new ArrayList<>();
+
+        strings.add("Hello");
+        strings.add("World");
+
+        strings.size();
+
+        for (int i = 0; i < strings.size(); i++) {
+            String s = strings.get(i);
+
+            System.out.println(s);
+        }
+
+        for (String s: strings) {
+            System.out.println(s);
+        }
     }
 }
